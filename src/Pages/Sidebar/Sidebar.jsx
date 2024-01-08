@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Sidebar.css';
 
 function Sidebar(){
@@ -7,7 +7,7 @@ function Sidebar(){
             <nav>
                 <ul>
                     <li>
-                        <Link to="/statehooks">Built-in React Hooks</Link>
+                        <NavLink to="/statehooks">Built-in React Hooks</NavLink>
                     </li>
                     <li>
                         <Link to="/community">Community</Link>
