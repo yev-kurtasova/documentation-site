@@ -56,5 +56,5 @@ root.render(
 
 function loader({ params }) {
     const user = data.filter(obj => obj.id === params.userId)
-    return user[user.id];
+    return user[0];
 }
