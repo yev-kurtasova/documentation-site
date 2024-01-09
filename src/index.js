@@ -42,7 +42,7 @@ const router = createBrowserRouter(
             <Route path='/about' element={<About />} />
             <Route path='/users' element={<Users />} />
             <Route path='/blog' element={<Blog />} />
-            <Route path='/users/:userId' loader={loader} element={<UserPage />} errorElement={<ErrorPage />}/>
+            <Route path='/users/:userId' element={<UserPage />} errorElement={<ErrorPage />}/>
             <Route path='*' element={<ErrorPage />} />
         </Route>
     )
@@ -54,7 +54,7 @@ root.render(
     <RouterProvider router={router} ></RouterProvider>
 );
 
-function loader({ params }) {
-    const user = data.filter(obj => obj.id === params.userId)
-    return user[0];
-}
+// function loader({ params }) {
+//     const user = data.filter(obj => obj.id === params.userId)
+//     return user[0];
+// }

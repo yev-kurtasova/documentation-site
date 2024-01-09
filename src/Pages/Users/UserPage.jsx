@@ -12,7 +12,7 @@ export default function UserPage() {
             .then(data => setUser(data))
     }, [])
 
-    // const user = useLoaderData(users);
+    const user = useLoaderData();
 
     return (
         <div className="Main user-page">
