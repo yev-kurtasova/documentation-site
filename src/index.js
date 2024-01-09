@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Header from './Pages/Header/Header';
 import Sidebar from './Pages/Sidebar/Sidebar';
 import Welcome from './Pages/Welcome/Welcome';
+import Footer from './Pages/Footer/Footer';
 import './global.css';
 import StateHook from './Pages/StateHookPage/StateHook';
 import Community from './Pages/Community/Community';
@@ -25,6 +26,7 @@ const Root = () => {
             <Header />
             <Sidebar />
             <Outlet />
+            <Footer />
         </div>
     )
 }
