@@ -19,6 +19,7 @@ import {
 import ErrorPage from './Pages/Error/ErrorPage';
 import { Users } from './Pages/Users/Users';
 import UserPage from './Pages/Users/UserPage';
+import Blog from './Pages/Blog/Blog';
 
 const Root = () => {
     return (
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
             <Route path='/resources' element={<Resources />} />
             <Route path='/about' element={<About />} />
             <Route path='/users' element={<Users />} />
+            <Route path='/blog' element={<Blog />} />
             <Route path='/users/:userId' loader={loader} element={<UserPage />} errorElement={<ErrorPage />}/>
             <Route path='*' element={<ErrorPage />} />
         </Route>

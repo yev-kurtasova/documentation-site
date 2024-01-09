@@ -21,6 +21,9 @@ function Sidebar(){
                     <li>
                         <NavLink to="/users">Users</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/blog">Blog</NavLink>
+                    </li>
                 </ul>
             </nav>
         </div>
