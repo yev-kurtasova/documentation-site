@@ -8,40 +8,49 @@ import StateHook from './Pages/StateHookPage/StateHook';
 import Community from './Pages/Community/Community';
 import Resources from './Pages/Resources/Resources';
 import About from './Pages/About/About';
+import data from './data/users.json';
 
-import{
+import {
     createBrowserRouter,
     createRoutesFromElements,
     RouterProvider, Route, Outlet
 } from 'react-router-dom';
 import ErrorPage from './Pages/Error/ErrorPage';
+import { Users } from './Pages/Users/Users';
+import UserPage from './Pages/Users/UserPage';
 
 const Root = () => {
-    return(
-<div className='container'>
-    <Header />
-    <Sidebar />
-    <Outlet />
-</div>
+    return (
+        <div className='container'>
+            <Header />
+            <Sidebar />
+            <Outlet />
+        </div>
     )
 }
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-<Route path='/' element={<Root />}>
-    <Route index element={<Welcome />} />
-    <Route path='/statehooks' element={<StateHook />} />
-    <Route path='/community' element={<Community />} />
-    <Route path='/resources' element={<Resources />} />
-    <Route path='/about' element={<About />} />
-    <Route path='*' element={<ErrorPage />} />
-</Route>
+        <Route path='/' element={<Root />}>
+            <Route index element={<Welcome />} />
+            <Route path='/statehooks' element={<StateHook />} />
+            <Route path='/community' element={<Community />} />
+            <Route path='/resources' element={<Resources />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/users' element={<Users />} />
+            <Route path='/users/:userId' loader={loader} element={<UserPage />} errorElement={<ErrorPage />}/>
+            <Route path='*' element={<ErrorPage />} />
+        </Route>
     )
 )
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-   <RouterProvider router={router} ></RouterProvider>
+    <RouterProvider router={router} ></RouterProvider>
 );
 
+function loader({ params }) {
+    const user = data.filter(obj => obj.id === params.userId)
+    return user[0];
+}

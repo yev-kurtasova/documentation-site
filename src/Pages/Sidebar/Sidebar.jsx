@@ -10,16 +10,16 @@ function Sidebar(){
                         <NavLink to="/statehooks">Built-in React Hooks</NavLink>
                     </li>
                     <li>
-                        <Link to="/community">Community</Link>
+                        <NavLink to="/community">Community</NavLink>
                     </li>
                     <li> 
-                        <Link to="/resources">Resources</Link>
+                        <NavLink to="/resources">Resources</NavLink>
                     </li>   
                     <li>
-                        <Link to="/about">About</Link>
+                        <NavLink to="/about">About</NavLink>
                     </li>
                     <li>
-                        <Link to="/users">Users</Link>
+                        <NavLink to="/users">Users</NavLink>
                     </li>
                 </ul>
             </nav>
